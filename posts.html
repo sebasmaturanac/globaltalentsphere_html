@@ -4,7 +4,7 @@
 <!-- Mirrored from violy.astroon.pro/posts.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Aug 2024 17:44:41 GMT -->
 <head>
     <meta charset="UTF-8">
-    <title>Blog</title>
+    <title>Global Talent Sphere - Jobs</title>
     <script src="../kit.fontawesome.com/4885b8d773.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/libs.min.css">
@@ -12,12 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div class="top_nav">
+    <!-- <div class="top_nav">
       <div class="container">
         <div class="left_nav"><span><i class="far fa-question-circle"></i>FAG</span><span><i class="fas fa-map-marker-alt"></i>184 Main Collins Street</span></div>
         <div class="right_nav"><span><i class="fas fa-paper-plane"></i>brunn@select-themes.com</span><span><i class="fas fa-mobile-alt"></i>444 77 0000</span></div>
       </div>
-    </div>
+    </div> -->
     <div class="container">
       <div class="menu d-flex justify-content-between align-items-center"><a class="logo" href="index-2.html"><img src="assets/img/icons/logo_vio.svg">Violy</a>
         <div class="menu__icon"><span></span><span></span><span></span><span></span></div>
@@ -86,7 +86,104 @@
     </header>
     <div class="post_content container">
       <div class="posts_s col-lg-12 p-0">
-                <div class="posts_standart"><a href="single_post_image.html">
+          <div class="wrp_post">
+            <div class="job-filters-container">
+              <form id="job-filter-form" class="job-filter-form">
+                <div class="job-form-row">
+                  <!-- Buscar trabajo -->
+                  <div class="job-form-group">
+                    <label for="job-title" class="job-label">Buscar trabajo</label>
+                    <input type="text" id="job-title" name="job-title" class="job-input" placeholder="Título del trabajo">
+                  </div>
+            
+                  <!-- Ubicación -->
+                  <div class="job-form-group">
+                    <label for="location" class="job-label">Ubicación</label>
+                    <input type="text" id="location" name="location" class="job-input" placeholder="Ubicación">
+                  </div>
+            
+                  <!-- Modalidad de trabajo -->
+                  <div class="job-form-group">
+                    <label for="work-mode" class="job-label">Modalidad</label>
+                    <select id="work-mode" name="work-mode" class="job-select">
+                      <option value="">Modalidad</option>
+                      <option value="remoto">Remoto</option>
+                      <option value="presencial">Presencial</option>
+                      <option value="hibrido">Híbrido</option>
+                    </select>
+                  </div>
+                </div>
+            
+                <div class="job-form-row">
+                  <!-- Tipo de trabajo -->
+                  <div class="job-form-group">
+                    <label for="job-type" class="job-label">Tipo</label>
+                    <select id="job-type" name="job-type" class="job-select">
+                      <option value="">Tipo de trabajo</option>
+                      <option value="full-time">Full Time</option>
+                      <option value="part-time">Part Time</option>
+                      <option value="freelance">Freelance</option>
+                      <option value="no-especifica">No especifica</option>
+                    </select>
+                  </div>
+            
+                  <!-- Categoría -->
+                  <div class="job-form-group">
+                    <label for="category" class="job-label">Categoría</label>
+                    <input type="text" id="category" name="category" class="job-input" placeholder="Categoría">
+                  </div>
+            
+                  <!-- Botón de búsqueda -->
+                  <div class="job-form-group">
+                    <button type="submit" class="job-submit-button">Buscar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        <div class="posts_standart quotes">
+          <div class="wrp_post">
+            <div class="category"><span>Jobs</span><span>category</span><span>Sub category</span></div><a href="single_post_quote.html">
+              <h3>Title</h3></a>
+            <div class="bottom_inf">
+              <div class="left_inf"><span>Ubicación</span></div>
+
+              <div class="left_inf"><span>Remote/Hibrid</span></div>
+              <div class="right_inf"><span>Fecha de Publicación</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="posts_standart quotes">
+          <div class="wrp_post">
+            <div class="category"><span>Blog</span><span>Construction</span><span>Painting</span></div><a href="single_post_quote.html">
+              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non. Iaculis at erat pellentesque adipiscing.</h3></a>
+            <div class="bottom_inf">
+              <div class="left_inf"><span>John Doe</span></div>
+              <div class="right_inf"><span>14.07.2019</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="posts_standart quotes">
+          <div class="wrp_post">
+            <div class="category"><span>Blog</span><span>Construction</span><span>Painting</span></div><a href="single_post_quote.html">
+              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non. Iaculis at erat pellentesque adipiscing.</h3></a>
+            <div class="bottom_inf">
+              <div class="left_inf"><span>John Doe</span></div>
+              <div class="right_inf"><span>14.07.2019</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="posts_standart quotes">
+          <div class="wrp_post">
+            <div class="category"><span>Blog</span><span>Construction</span><span>Painting</span></div><a href="single_post_quote.html">
+              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non. Iaculis at erat pellentesque adipiscing.</h3></a>
+            <div class="bottom_inf">
+              <div class="left_inf"><span>John Doe</span></div>
+              <div class="right_inf"><span>14.07.2019</span></div>
+            </div>
+          </div>
+        </div>
+                <!-- <div class="posts_standart"><a href="single_post_image.html">
                     <div class="post_img"><img src="assets/img/blog_post_one_l.png"></div></a>
                   <div class="wrp_post">
                     <div class="category"><span>Blog</span><span>Construction</span><span>Painting</span></div><a href="single_post_image.html">
@@ -97,18 +194,9 @@
                       <div class="right_inf"><span>14.07.2019</span></div>
                     </div>
                   </div>
-                </div>
-                <div class="posts_standart quotes">
-                  <div class="wrp_post">
-                    <div class="category"><span>Blog</span><span>Construction</span><span>Painting</span></div><a href="single_post_quote.html">
-                      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non. Iaculis at erat pellentesque adipiscing.</h3></a>
-                    <div class="bottom_inf">
-                      <div class="left_inf"><span>John Doe</span></div>
-                      <div class="right_inf"><span>14.07.2019</span></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="posts_standart video">
+                </div> -->
+                
+                <!-- <div class="posts_standart video">
                   <div class="video_p">
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3wi65UW_nJk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   </div>
@@ -121,8 +209,8 @@
                       <div class="right_inf"><span>14.07.2019</span></div>
                     </div>
                   </div>
-                </div>
-                <div class="posts_standart"><a href="single_post_image.html">
+                </div> -->
+                <!-- <div class="posts_standart"><a href="single_post_image.html">
                     <div class="post_img"><img src="assets/img/blog_post_two_l.png"></div></a>
                   <div class="wrp_post">
                     <div class="category"><span>Blog</span><span>Construction</span><span>Painting</span></div><a href="single_post_image.html">
@@ -133,7 +221,7 @@
                       <div class="right_inf"><span>14.07.2019</span></div>
                     </div>
                   </div>
-                </div>
+                </div> -->
         <div class="nav_pages"><span class="active">1</span><span>2</span><span>3</span></div>
       </div>
     </div>
