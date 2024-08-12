@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Subir CV</title>
+    <script src="../kit.fontawesome.com/4885b8d773.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/libs.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="top_nav">
+      <div class="container">
+        <div class="left_nav"><span><i
+              class="far fa-question-circle"></i>FAG</span><span><i
+              class="fas fa-map-marker-alt"></i>184 Main Collins
+            Street</span></div>
+        <div class="right_nav"><span><i
+              class="fas fa-paper-plane"></i>brunn@select-themes.com</span><span><i
+              class="fas fa-mobile-alt"></i>444 77 0000</span></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="menu d-flex justify-content-between align-items-center"><a
+          class="logo" href="index.html"><img
+            src="assets/img/icons/logo_circular_avatar.ico">Global Talent
+          Sphere</a>
+        <div
+          class="menu__icon"><span></span><span></span><span></span><span></span></div>
+        <div class="navbar-nav">
+          <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li class="down_nav"><a href="portfolio.html">Servicios</a>
+              <div class="dropdown-menu small_menu">
+                <ul>
+                  <li><a href="cv_upload.html">Subir tu CV</a></li>
+                  <li><a href="for_companies.html">Empresas</a></li>
+                  <li><a href="jobs.html">Jobs</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="about.html">Nosotros</a></li>
+            <li><a href="about.html">Proceso</a></li>
+            <li><a href="about.html">Blog</a></li>
+            <li><a href="about.html">Contacto</a></li>            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <header class="head_page"><span class="element_two"><img
+          src="assets/img/cub_two.png" alt></span><span
+        class="element_three"><img src="assets/img/cub_three.png"
+          alt></span><span class="element_thirteen"><img
+          src="assets/img/icons/cub_thirteen.svg" alt></span>
+      <div class="container title_h">
+        <div class="block_title">
+          <h1>Subí tu CV</h1>
+          <p>Sube tu CV completo para estar preparado ante nuevas oportunidades
+            laborales. Un CV actualizado te hace destacar y aumenta tus
+            posibilidades de ser seleccionado en futuras búsquedas.
+
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section class="cv_upload">
+
+      <div class="wizard">
+        <!-- Paso 1: Elección -->
+        <div id="step1" class="step active">
+          <h2>Paso 1: Subir CV o Completar Formulario</h2>
+          <button onclick="showStep(2, 'upload')">Subir CV</button>
+          <button onclick="showStep(2, 'manual')">Completar Formulario
+            Manualmente</button>
+        </div>
+
+        <!-- Paso 2: Formulario Manual -->
+        <div id="step2-manual" class="step">
+          <h2>Completa el Formulario</h2>
+          <form class="form-grid">
+            <!-- Foto, ocupa toda la fila -->
+            <div class="form-group photo full-width">
+              <label for="photo">Foto *</label>
+              <input type="file" id="photo" name="photo"
+                accept="image/jpeg, image/png">
+            </div>
+
+            <!-- Nombre y Apellido -->
+            <div class="form-group">
+              <label for="name">Nombre *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="surname">Apellido *</label>
+              <input type="text" id="surname" name="surname" required>
+            </div>
+
+            <!-- Email y Confirmar Email -->
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="confirm-email">Confirmar email *</label>
+              <input type="email" id="confirm-email" name="confirm-email"
+                required>
+            </div>
+
+            <!-- Documento y Número de Documento -->
+            <div class="form-group">
+              <label for="document-type">Tipo de documento *</label>
+              <select id="document-type" name="document-type" required>
+                <option value>Seleccione una opción</option>
+                <option value="dni">DNI</option>
+                <option value="passport">Pasaporte</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="document-number">Nº de documento *</label>
+              <input type="text" id="document-number" name="document-number"
+                required>
+            </div>
+
+            <!-- Teléfono y Género -->
+            <div class="form-group">
+              <label for="phone">Teléfono *</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="gender">Género *</label>
+              <select id="gender" name="gender" required>
+                <option value>Seleccione una opción</option>
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
+              </select>
+            </div>
+
+            <!-- País de Residencia y Provincia -->
+            <div class="form-group">
+              <label for="country">País de residencia *</label>
+              <select id="country" name="country" required>
+                <option value>Seleccione una opción</option>
+                <!-- Añadir más opciones de países aquí -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="province">Provincia</label>
+              <select id="province" name="province">
+                <option value>Seleccione una opción</option>
+                <!-- Añadir más opciones de provincias aquí -->
+              </select>
+            </div>
+
+            <!-- Fecha de Nacimiento -->
+            <div class="form-group full-width">
+              <label for="birthdate">Fecha de nacimiento *</label>
+              <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+
+            <!-- Botones -->
+            <div class="form-buttons full-width">
+              <button type="button" onclick="showStep(1)">Atrás</button>
+              <button type="button" onclick="showStep(3)">Continuar</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Paso 3: Información Adicional -->
+        <div id="step3" class="step">
+          <h2>Información Adicional</h2>
+          <form id="additionalInfoForm">
+
+            <!-- Sección de Educación -->
+            <div id="education-section">
+              <h3>Educación</h3>
+              <div class="education-block">
+                <!-- Formulario de educación -->
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo[]" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="pais">País</label>
+                    <select id="pais" name="pais[]">
+                      <option value>Seleccione una opción</option>
+                      <!-- Opciones de país -->
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="institucion">Institución</label>
+                    <input type="text" id="institucion" name="institucion[]"
+                      required>
+                  </div>
+                  <div class="form-group">
+                    <label for="area-estudio">Área de estudio</label>
+                    <select id="area-estudio" name="area-estudio[]">
+                      <option value>Seleccione una opción</option>
+                      <!-- Opciones de área de estudio -->
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="nivel-estudio">Nivel de estudio</label>
+                    <select id="nivel-estudio" name="nivel-estudio[]">
+                      <option value>Seleccione una opción</option>
+                      <!-- Opciones de nivel de estudio -->
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="estado-estudio">Estado de estudio</label>
+                    <select id="estado-estudio" name="estado-estudio[]">
+                      <option value>Seleccione una opción</option>
+                      <!-- Opciones de estado de estudio -->
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="fecha-inicio">Fecha de inicio</label>
+                    <input type="date" id="fecha-inicio" name="fecha-inicio[]">
+                  </div>
+                  <div class="form-group">
+                    <label for="fecha-finalizacion">Fecha de
+                      finalización</label>
+                    <input type="date" id="fecha-finalizacion"
+                      name="fecha-finalizacion[]">
+                  </div>
+                  <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" name="descripcion[]"></textarea>
+                  </div>
+                  <div class="form-group checkbox-group">
+                    <input type="checkbox" id="actualmente-asisto"
+                      name="actualmente-asisto[]">
+                    <label for="actualmente-asisto">Actualmente asisto</label>
+                  </div>
+                  <div class="form-group full-width">
+                    <label for="fecha-prevista">Fecha de prevista de
+                      finalización</label>
+                    <input type="date" id="fecha-prevista"
+                      name="fecha-prevista[]">
+                  </div>
+                </div>
+                <button type="button" class="remove-education">Eliminar</button>
+              </div>
+              <button type="button" id="add-education">+ Añadir
+                educación</button>
+            </div>
+
+            <!-- Sección de Idiomas -->
+            <h3>Idiomas</h3>
+            <div id="languages-section">
+              <div class="language-block form-grid">
+                <!-- Campo de texto para el idioma -->
+                <div class="form-group">
+                  <label for="idioma">Idioma</label>
+                  <input type="text" id="idioma" name="idioma[]"
+                    placeholder="Idioma" required>
+                </div>
+                <!-- Selector para nivel escrito -->
+                <div class="form-group">
+                  <label for="nivel-escrito">Nivel Escrito</label>
+                  <select id="nivel-escrito" name="nivel-escrito[]">
+                    <option value="basico">Básico</option>
+                    <option value="intermedio">Intermed tie</option>
+                    <option value="avanzado">Avanzado</option>
+                    <option value="nativo">Nativo</option>
+                  </select>
+                </div>
+                <!-- Selector para nivel oral -->
+                <div class="form-group">
+                  <label for="nivel-oral">Nivel Oral</label>
+                  <select id="nivel-oral" name="nivel-oral[]">
+                    <option value="basico">Básico</option>
+                    <option value="intermedio">Intermedio</option>
+                    <option value="avanzado">Avanzado</option>
+                    <option value="nativo">Nativo</option>
+                  </select>
+                </div>
+                <!-- Botón para eliminar idioma -->
+                <button type="button" class="remove-language">Eliminar</button>
+              </div>
+              <button type="button" id="add-language">+ Añadir idioma</button>
+            </div>
+
+            <!-- Sección de Experiencia Laboral -->
+            <h3>Experiencia Laboral</h3>
+            <div id="work-section">
+              <div class="work-block form-grid">
+                <!-- Nombre del puesto / Título -->
+                <div class="form-group">
+                  <label for="puesto">Nombre del puesto / Título</label>
+                  <input type="text" id="puesto" name="puesto[]"
+                    placeholder="Nombre del puesto" required>
+                </div>
+
+                <!-- Jerarquía -->
+                <div class="form-group">
+                  <label for="jerarquia">Jerarquía</label>
+                  <select id="jerarquia" name="jerarquia[]">
+                    <option value>Seleccione una opción</option>
+                    <!-- Opciones de jerarquía -->
+                  </select>
+                </div>
+
+                <!-- Nombre de empresa/negocio -->
+                <div class="form-group">
+                  <label for="empresa">Nombre de empresa / negocio</label>
+                  <input type="text" id="empresa" name="empresa[]"
+                    placeholder="Nombre de empresa / negocio" required>
+                </div>
+
+                <!-- País -->
+                <div class="form-group">
+                  <label for="pais-trabajo">País</label>
+                  <select id="pais-trabajo" name="pais-trabajo[]">
+                    <option value>Seleccione una opción</option>
+                    <!-- Opciones de país -->
+                  </select>
+                </div>
+
+                <!-- Tipo de industria -->
+                <div class="form-group">
+                  <label for="industria">Tipo de industria</label>
+                  <select id="industria" name="industria[]">
+                    <option value>Seleccione una opción</option>
+                    <!-- Opciones de industria -->
+                  </select>
+                </div>
+
+                <!-- Área de trabajo -->
+                <div class="form-group">
+                  <label for="area-trabajo">Área de trabajo</label>
+                  <select id="area-trabajo" name="area-trabajo[]">
+                    <option value>Seleccione una opción</option>
+                    <!-- Opciones de área de trabajo -->
+                  </select>
+                </div>
+
+                <!-- Subárea de trabajo -->
+                <div class="form-group">
+                  <label for="subarea-trabajo">Subárea de trabajo</label>
+                  <select id="subarea-trabajo" name="subarea-trabajo[]">
+                    <option value>Seleccione una opción</option>
+                    <!-- Opciones de subárea de trabajo -->
+                  </select>
+                </div>
+
+                <!-- Fecha de inicio -->
+                <div class="form-group">
+                  <label for="fecha-inicio">Fecha de inicio</label>
+                  <input type="date" id="fecha-inicio" name="fecha-inicio[]">
+                </div>
+
+                <!-- Fecha de finalización -->
+                <div class="form-group">
+                  <label for="fecha-fin">Fecha de finalización</label>
+                  <input type="date" id="fecha-fin" name="fecha-fin[]">
+                </div>
+
+                <!-- Descripción -->
+                <div class="form-group full-width">
+                  <label for="descripcion">Descripción</label>
+                  <textarea id="descripcion" name="descripcion[]"
+                    rows="3"></textarea>
+                </div>
+
+                <button type="button" class="remove-work">Eliminar</button>
+              </div>
+              <button type="button" id="add-work">+ Añadir experiencia</button>
+            </div>
+
+            <!-- Sección de URL Linkedin -->
+            <div class="form-group">
+              <label for="linkedin">URL de Linkedin</label>
+              <input type="url" id="linkedin" name="linkedin[]" placeholder="https://www.linkedin.com/in/username" required>
+          </div>
+          
+                      <!-- Sección de Skills -->
+
+          <div class="form-group">
+            <label for="skills">Añadir Skills</label>
+            <select id="skills" name="skills[]" multiple="multiple" style="width: 100%;">
+                <option value="skill1">Skill 1</option>
+                <option value="skill2">Skill 2</option>
+                <option value="skill3">Skill 3</option>
+                <!-- Añade más habilidades según necesites -->
+            </select>
+           </div>
+            <!-- Sección de Subir Cv -->
+
+           <div class="form-group">
+            <label for="cv-upload">Subir CV</label>
+            <input type="file" id="cv-upload" name="cv-upload" accept=".doc, .docx, .pdf">
+            </div> 
+
+
+
+
+
+            <!-- Botones del formulario -->
+            <button type="button" onclick="showStep(2)">Atrás</button>
+            <button type="submit">Enviar Postulación</button>
+          </form>
+        </div>
+
+      </section>
+
+      <!-- <section class="form_b">
+      <div class="container">
+        <div class="form_contact">
+          <h2>Contact</h2>
+          <p> Your email address will not be published. Required fields are marked *</p>
+          <form>
+            <div class="rpl_b">
+              <input placeholder="Name">
+              <input placeholder="Email">
+            </div>
+            <textarea placeholder="Comment"></textarea>
+            <p>
+              <input type="checkbox" value="yes">
+              <label>Save my name, email, and website in this browser for the next time I comment.</label>
+            </p>
+            <div class="button"><a href="#">Send Message</a></div>
+          </form>
+        </div>
+      </div>
+    </section> -->
+
+      <footer id="footer">
+        <div class="container">
+          <div class="brend">
+            <div class="logo"><img
+                src="assets/img/icons/logo_circular_avatar.ico">Global Talent
+              Sphere</div>
+            <p>Address : 999 White St</p>
+            <p>Phone Number : + (888) 123-4567</p>
+            <p>Email : admin@mail.com</p>
+          </div>
+          <div class="nav_f col-lg-12 col-12"><span>Copyright © 2019
+              Astroon.</span></div>
+        </div>
+      </footer>
+      <script src="assets/js/libs.min.js"></script>
+      <script src="assets/js/index.js"></script>
+      <script src="assets/js/wizardform.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+    </body>
+
+  </html>

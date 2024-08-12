@@ -4073,3 +4073,217 @@ h2 {
 }
 
 
+/* Form Wizard css */
+
+.cv_upload {
+  background-color: #F5F5F5; /* Color de fondo de toda la sección */
+  padding: 20px 0; /* Espaciado superior e inferior para la sección */
+  display: flex;
+  justify-content: center;
+}
+
+.wizard {
+  background-color: #ffffff; /* Fondo blanco para el contenedor del formulario */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
+  border-radius: 8px; /* Bordes redondeados */
+  width: 80%; /* Ancho relativo al contenedor padre, ajustar según necesidad */
+  max-width: 960px; /* Ancho máximo para grandes pantallas */
+  padding: 40px; /* Espaciado interno */
+  margin: 20px; /* Margen externo */
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  gap: 20px; /* Espacio entre campos */
+  align-items: center; /* Alineación vertical de los elementos del formulario */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold; /* Texto en negrita para las etiquetas */
+}
+
+/* Aplica estilos generalizados a todos los inputs y selects, excepto el input de archivo */
+input[type="text"], input[type="email"], input[type="tel"], select, input[type="date"] {
+  border: 1px solid #ccc; /* Borde sutil */
+  border-radius: 50px; /* Bordes fuertemente redondeados */
+  padding: 20px; /* Acolchado generoso */
+  outline: none; /* Eliminar el contorno al enfocar */
+  font-size: 14px; /* Tamaño de fuente coherente */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho externo */
+  width: 100%; /* Ajuste de ancho */
+  background: #FAFAFA; /* Fondo ligeramente gris para diferenciar de blanco puro */
+}
+
+/* Revertir estilos específicamente para el input de archivo */
+input[type="file"] {
+  border: none; /* Sin borde */
+  border-radius: 0; /* Sin bordes redondeados */
+  padding: 5px; /* Padding reducido */
+  background: transparent; /* Fondo transparente */
+  outline: none; /* Sin contorno al enfocar */
+  font-size: inherit; /* Hereda el tamaño de fuente del contenedor */
+}
+
+.form-buttons {
+  grid-column: 1 / -1; /* Botones a lo ancho de todas las columnas */
+  display: flex;
+  justify-content: space-between; /* Espaciado entre botones */
+}
+
+.form-buttons button {
+  padding: 10px 20px;
+  color: white;
+  background-color: #4CAF50; /* Color verde para los botones */
+  border: none;
+  border-radius: 50px; /* Bordes redondeados para botones */
+  cursor: pointer;
+}
+
+.step {
+  display: none;  /* Todos los pasos están ocultos por defecto */
+}
+
+.step.active {
+  display: block; /* Solo el paso activo se muestra */
+}
+
+
+/* step 3 css */
+
+.step h3 {
+  padding-top: 20px;
+  border-top: 1px solid #ccc; /* Línea separadora para cada sección */
+}
+
+.education-block, .language-block, .work-block {
+  margin-bottom: 20px;
+}
+
+button.remove-education, button.remove-language, button.remove-work {
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px; /* Añade bordes redondeados a los botones de eliminar */
+}
+
+#add-education, #add-language, #add-work {
+  margin-top: 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px; /* Añade bordes redondeados a los botones de añadir */
+}
+
+#education-section .form-grid, #languages-section .form-grid, #work-section .form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* Tres columnas */
+  gap: 20px;  /* Espaciado entre campos */
+}
+
+#education-section .form-group, #languages-section .form-group, #work-section .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+#education-section .checkbox-group, #languages-section .checkbox-group, #work-section .checkbox-group {
+  flex-direction: row;
+  align-items: center;
+}
+
+#education-section input[type="date"], #languages-section input[type="date"], #work-section input[type="date"],
+#education-section select, #languages-section select, #work-section select,
+#education-section textarea, #languages-section textarea, #work-section textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.full-width {
+  grid-column: 1 / -1; /* Hace que algunos elementos se extiendan a lo largo de todas las columnas */
+}
+#languages-section .form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cuatro columnas: tres para los campos y una para el botón */
+  gap: 10px; /* Espaciado entre campos */
+  align-items: center; /* Alinea verticalmente los elementos en el centro */
+}
+
+#languages-section .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+#languages-section .remove-language {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 4px; /* Bordes redondeados para el botón */
+  grid-column: 4; /* Ubica el botón en la cuarta columna */
+}
+
+#add-language {
+  margin-top: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#work-section .form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Ajusta según el número de columnas que necesites */
+  gap: 20px; /* Espaciado entre campos */
+}
+
+#work-section .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+#work-section .full-width {
+  grid-column: 1 / -1; /* Hace que el textarea ocupe toda la fila */
+}
+
+#work-section .remove-work, #add-work {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#add-work {
+  background-color: green; /* Color verde para el botón de añadir */
+}
+
+.form-group input[type="url"] {
+  padding: 8px; /* Acolchado interno para mayor comodidad al escribir */
+  border: 1px solid #ccc; /* Borde sutil */
+  border-radius: 4px; /* Bordes redondeados para un aspecto moderno */
+  width: 100%; /* Aprovecha todo el ancho disponible del contenedor */
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+}
