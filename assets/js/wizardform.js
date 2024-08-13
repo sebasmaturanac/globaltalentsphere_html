@@ -1,37 +1,38 @@
-function showStep(step, mode = '') {
-    console.log(`Changing to step: ${step}, mode: ${mode}`);  // Debugging output
+function showStep(step, mode = "") {
+  console.log(`Changing to step: ${step}, mode: ${mode}`); // Debugging output
 
-    // Hide all steps
-    const steps = document.querySelectorAll('.step');
-    steps.forEach(stepElement => {
-        stepElement.classList.remove('active');
-    });
+  // Hide all steps
+  const steps = document.querySelectorAll(".step");
+  steps.forEach((stepElement) => {
+    stepElement.classList.remove("active");
+  });
 
-    // Save the last mode if we're changing to step 2 and a mode is provided
-    if (step === 2 && mode) {
-        lastMode = mode;
-    }
+  // Save the last mode if we're changing to step 2 and a mode is provided
+  if (step === 2 && mode) {
+    lastMode = mode;
+  }
 
-    // Determine which step to show
-    if (step === 2 && !mode && lastMode) {
-        // If returning to step 2 and no mode is specified, use the last stored mode
-        document.getElementById(`step2-${lastMode}`).classList.add('active');
-    } else if (step === 2 && mode) {
-        // If a mode is specified for step 2, show it
-        document.getElementById(`step2-${mode}`).classList.add('active');
-    } else {
-        // For any other step, just show the corresponding step
-        document.getElementById(`step${step}`).classList.add('active');
-    }
+  // Determine which step to show
+  if (step === 2 && !mode && lastMode) {
+    // If returning to step 2 and no mode is specified, use the last stored mode
+    document.getElementById(`step2-${lastMode}`).classList.add("active");
+  } else if (step === 2 && mode) {
+    // If a mode is specified for step 2, show it
+    document.getElementById(`step2-${mode}`).classList.add("active");
+  } else {
+    // For any other step, just show the corresponding step
+    document.getElementById(`step${step}`).classList.add("active");
+  }
 
-    // Update the current step
-    currentStep = step;
-    console.log(`Current step is now: ${currentStep}, last mode used: ${lastMode}`); // Debug output
+  // Update the current step
+  currentStep = step;
+  console.log(
+    `Current step is now: ${currentStep}, last mode used: ${lastMode}`
+  ); // Debug output
 }
 
-
-$(document).ready(function() {
-    const educationTemplate = `
+$(document).ready(function () {
+  const educationTemplate = `
     <div class="education-block">
         <div class="form-grid">
             <div class="form-group">
@@ -86,8 +87,8 @@ $(document).ready(function() {
         </div>
     </div>`;
 
-     // Plantilla para idiomas
-     const languageTemplate = ` <div class="language-block form-grid">
+  // Plantilla para idiomas
+  const languageTemplate = ` <div class="language-block form-grid">
         <!-- Campo de texto para el idioma -->
         <div class="form-group">
             <label for="idioma">Idioma</label>
@@ -119,60 +120,102 @@ $(document).ready(function() {
     <button type="button" id="add-language">+ Añadir idioma</button>
 </div>`; // Completa con el HTML adecuado para un bloque de idioma
 
-     // Plantilla para experiencia laboral
-     const workTemplate = `...`; // Completa con el HTML adecuado para un bloque de experiencia laboral
- 
+  // Plantilla para experiencia laboral
+  const workTemplate = `<div id="work-section">
+              <div class="work-block form-grid">
+                <!-- Nombre del puesto / Título -->
+                <div class="form-group">
+                  <label for="puesto">Nombre del puesto / Título</label>
+                  <input type="text" id="puesto" name="puesto[]"
+                    placeholder="Nombre del puesto" required>
+                </div>
 
+                <!-- Jerarquía -->
+                <div class="form-group">
+                  <label for="jerarquia">Jerarquía</label>
+                  <select id="jerarquia" name="jerarquia[]">
+                    <option value>Seleccione una opción</option>
+                    <!-- Opciones de jerarquía -->
+                  </select>
+                </div>
 
-    $('#add-education').click(function() {
-        var newBlock = $('.education-block:first').clone(true);
-        newBlock.find('input, select, textarea').val('');
-        newBlock.appendTo('#education-section');
-    });
+                <!-- Nombre de empresa/negocio -->
+                <div class="form-group">
+                  <label for="empresa">Nombre de empresa / negocio</label>
+                  <input type="text" id="empresa" name="empresa[]"
+                    placeholder="Nombre de empresa / negocio" required>
+                </div>
 
-    // Ajuste aquí: Usar closest para asegurar que se selecciona el .education-block
-    $('#education-section').on('click', '.remove-education', function() {
-        $(this).closest('.education-block').remove();
-        if ($('.education-block').length === 0) {
-            $('#education-section').append(educationTemplate);
-        }
-    });
+                <!-- País -->
+                <div class="form-group">
+                  <label for="pais-trabajo">País</label>
+                  <select id="pais-trabajo" name="pais-trabajo[]">
+                    <option value>Seleccione una opción</option>
+                    <!-- Opciones de país -->
+                  </select>
+                </div>
 
-    // Añadir idioma
-    $('#add-language').click(function() {
-        var newLanguage = $('.language-block:first').clone();
-        newLanguage.find('input').val('');
-        newLanguage.appendTo('#languages-section');
-    });
+                <!-- Tipo de industria -->
+                <div class="form-group">
+                  <label for="industria">Tipo de industria</label>
+                  <select id="industria" name="industria[]">
+                    <option value>Seleccione una opción</option>
+                    <!-- Opciones de industria -->
+                  </select>
+                </div>`; // Completa con el HTML adecuado para un bloque de experiencia laboral
 
-    // Eliminar idioma
-    $('#languages-section').on('click', '.remove-language', function() {
-        $(this).parent('.language-block').remove();
-    });
+  $("#add-education").click(function () {
+    var newBlock = $(".education-block:first").clone(true);
+    newBlock.find("input, select, textarea").val("");
+    newBlock.appendTo("#education-section");
+  });
 
-    // Añadir experiencia laboral
-    $('#add-work').click(function() {
-        var newWork = $('.work-block:first').clone();
-        newWork.find('input').val('');
-        newWork.appendTo('#work-section');
-    });
+  // Ajuste aquí: Usar closest para asegurar que se selecciona el .education-block
+  $("#education-section").on("click", ".remove-education", function () {
+    $(this).closest(".education-block").remove();
+    if ($(".education-block").length === 0) {
+      $("#education-section").append(educationTemplate);
+    }
+  });
 
-    // Eliminar experiencia laboral
-    $('#work-section').on('click', '.remove-work', function() {
-        $(this).parent('.work-block').remove();
-    });
+  // Asegurar que siempre hay al menos un bloque de idioma al inicio
+  if ($(".language-block").length === 0) {
+    $("#languages-section").append(languageTemplate);
+  }
+
+  // Añadir idioma
+  $("#add-language").click(function () {
+    var newLanguage = $(".language-block:first").clone(true);
+    newLanguage.find("input, select").val("");
+    newLanguage.appendTo("#languages-section");
+  });
+
+  // Eliminar idioma
+  $("#languages-section").on("click", ".remove-language", function () {
+    $(this).closest(".language-block").remove();
+    // Asegurar que el botón de añadir idioma sigue existiendo y que hay al menos un bloque de idioma
+    if ($(".language-block").length === 0) {
+      $("#languages-section").append(languageTemplate);
+    }
+  });
+
+  // Añadir experiencia laboral
+  $("#add-work").click(function () {
+    var newWork = $(".work-block:first").clone();
+    newWork.find("input").val("");
+    newWork.appendTo("#work-section");
+  });
+
+  // Eliminar experiencia laboral
+  $("#work-section").on("click", ".remove-work", function () {
+    $(this).parent(".work-block").remove();
+  });
 });
 
-
-
-
-
-$(document).ready(function() {
-    $('#skills').select2({
-        placeholder: "Selecciona habilidades",
-        allowClear: true,
-        tags: true  // Permite añadir habilidades que no están predefinidas en las opciones
-    });
+$(document).ready(function () {
+  $("#skills").select2({
+    placeholder: "Selecciona habilidades",
+    allowClear: true,
+    tags: true, // Permite añadir habilidades que no están predefinidas en las opciones
+  });
 });
-
-
